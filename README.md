@@ -16,4 +16,4 @@
 <br>
 7. Atbalsta dažādus datu formātus: eksportējiet un importējiet datus dažādos formātos, piemēram, CSV, JSON vai citos teksta formātos.  
 
-<h4 align="center"> Šī aplikācija var būt noderīga dažādās jomās, piemēram, preču uzskaitei, klientu datu uzraudzībai, statistikas analīzei un daudz ko citu. Svarīgs aspekts ir lietošanas ērtums. </h4>
+<h3> Šī aplikācija var būt noderīga dažādās jomās, piemēram, preču uzskaitei, klientu datu uzraudzībai, statistikas analīzei un daudz ko citu. Svarīgs aspekts ir lietošanas ērtums. </h3>
