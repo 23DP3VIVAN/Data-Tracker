@@ -26,18 +26,33 @@ class StepTracker:
         else:
             print(f"Nav datu par šo datumu: {date}.")
 
-    def calculate_average_steps(self, period='day'):
+    def calculate_average(self, steps_list):
+        if steps_list:
+            return statistics.mean(steps_list)
+        return 0
+
+    def get_steps_for_period(self, period):
+        period_data = []
+        today = datetime.today()
         if period == 'day':
-            return statistics.mean(self.data.values()) if self.data else 0
+            period_data = list(self.data.values())
         elif period == 'week':
-            week_data = [self.data[date] for date in self.data if datetime.strptime(date, '%Y-%m-%d') > datetime.today() - timedelta(weeks=1)]
-            return statistics.mean(week_data) if week_data else 0
+            for date in self.data:
+                if datetime.strptime(date, '%Y-%m-%d') > today - timedelta(weeks=1):
+                    period_data.append(self.data[date])
         elif period == 'month':
-            month_data = [self.data[date] for date in self.data if datetime.strptime(date, '%Y-%m-%d') > datetime.today() - timedelta(days=30)]
-            return statistics.mean(month_data) if month_data else 0
+            for date in self.data:
+                if datetime.strptime(date, '%Y-%m-%d') > today - timedelta(days=30):
+                    period_data.append(self.data[date])
         elif period == 'year':
-            year_data = [self.data[date] for date in self.data if datetime.strptime(date, '%Y-%m-%d') > datetime.today() - timedelta(days=365)]
-            return statistics.mean(year_data) if year_data else 0
+            for date in self.data:
+                if datetime.strptime(date, '%Y-%m-%d') > today - timedelta(days=365):
+                    period_data.append(self.data[date])
+        return period_data
+
+    def calculate_average_steps(self, period='day'):
+        period_data = self.get_steps_for_period(period)
+        return self.calculate_average(period_data)
 
     def export_data(self, filename):
         with open(filename, 'w') as f:
@@ -48,3 +63,7 @@ class StepTracker:
         with open(filename, 'r') as f:
             self.data = json.load(f)
         print(f"Dati importēti no {filename}.")
+
+    def generate_report(self, period='day'):
+        avg_steps = self.calculate_average_steps(period)
+        print(f"Vidējais soļu skaits {period}: {avg_steps}")
