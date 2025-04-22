@@ -1,0 +1,11 @@
+Soļu skaitītāja nedēļas rezultāti:
+Pirmdiena: 200 soļi
+Otrdiena: 330 soļi
+Trešdiena: 100 soļi
+Ceturtdiena: 100 soļi
+Piektdiena: 100 soļi
+Sestdiena: 100 soļi
+Svētdiena: 1000 soļi
+
+Kopā: 1930 soļi
+Vidēji dienā: 275.71 soļi
