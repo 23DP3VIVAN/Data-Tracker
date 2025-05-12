@@ -22,3 +22,7 @@ def galvena_programma():
 
 if __name__ == "__main__":
     galvena_programma()
+<<<<<<< HEAD
+=======
+
+>>>>>>> 75b99a49c6642ec75510e88924409c2235689a04
