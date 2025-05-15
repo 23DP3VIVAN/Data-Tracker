@@ -29,3 +29,19 @@ def login():
                 print("Nepareizs lietotājvārds vai parole. Mēģini vēlreiz.\n")
         else:
             print("Nederīga izvēle, mēģini vēlreiz.\n")
+    return False
+
+if __name__ == "__main__":
+    print("Lietotāju datu pārvaldība")
+    while True:
+        action = input("Izvēlies darbību (reģistrēties/ielogoties/iziet): ").strip().lower()
+        if action == "reģistrēties":
+            register()
+        elif action == "ielogoties":
+            if login():
+                break
+        elif action == "iziet":
+            print("Uz redzēšanos!")
+            break
+        else:
+            print("Nederīga izvēle, mēģini vēlreiz.\n")

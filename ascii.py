@@ -8,3 +8,4 @@ def print_ascii_art():
  |_____/   |_|  |______|_|    
        SOĻU SKAITĪTĀJS
     """)
+    print("Izstrādāts ar mīlestību un rūpību.\n")

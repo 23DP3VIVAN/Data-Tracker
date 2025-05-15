@@ -5,3 +5,4 @@ def show_menu():
     print("3. Iziet")
     choice = input("Tava izvēle: ")
     return choice
+
